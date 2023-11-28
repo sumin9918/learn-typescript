@@ -1,3 +1,16 @@
+/**
+ * JSDoc 적용
+ *
+ * 장점
+ * - 타입스크립트를 쉽게 작성할 수 있다.
+ *
+ * 단점
+ * - 정의해야 하는 타입이 많을 경우, 불필요한 코드 숫자가 늘어난다
+ * - 재활용이 어렵다
+ */
+
+// @ts-check
+
 // utils
 function $(selector) {
   return document.querySelector(selector);
@@ -35,6 +48,18 @@ function createSpinnerElement(id) {
 // state
 let isDeathLoading = false;
 let isRecoveredLoading = false;
+
+// type
+/**
+ * 타입별칭
+ * @typedef {object} CovidSummary
+ * @property {Array<object>} Country
+ */
+
+// api
+/**
+ * @returns {Promise<CovidSummary>}
+ */
 
 function fetchCovidSummary() {
   const url = "https://api.covid19api.com/summary";
